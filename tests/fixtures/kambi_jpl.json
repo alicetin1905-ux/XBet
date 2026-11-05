@@ -1,0 +1,525 @@
+{
+ "events": [
+  {
+   "event": {
+    "id": 1028157139,
+    "name": "Standard Luik - SK Beveren",
+    "nameDelimiter": "-",
+    "englishName": "Standard de Liège - SK Beveren",
+    "homeName": "Standard Luik",
+    "awayName": "SK Beveren",
+    "start": "2026-11-06T19:45:00Z",
+    "group": "Jupiler Pro League",
+    "groupId": 1000094965,
+    "path": [
+     {
+      "id": 1000093190,
+      "name": "Voetbal",
+      "englishName": "Football",
+      "termKey": "football"
+     },
+     {
+      "id": 1000461740,
+      "name": "België",
+      "englishName": "Belgium",
+      "termKey": "belgium"
+     },
+     {
+      "id": 1000094965,
+      "name": "Jupiler Pro League",
+      "englishName": "Jupiler Pro League",
+      "termKey": "jupiler_pro_league"
+     }
+    ],
+    "nonLiveBoCount": 264,
+    "sport": "FOOTBALL",
+    "tags": [
+     "OFFERED_LIVE",
+     "BET_BUILDER",
+     "MATCH"
+    ],
+    "state": "NOT_STARTED"
+   },
+   "betOffers": [
+    {
+     "id": 2710792557,
+     "criterion": {
+      "id": 1001159858,
+      "label": "Reguliere speeltijd",
+      "englishLabel": "Full Time",
+      "order": [],
+      "occurrenceType": "GOALS",
+      "lifetime": "FULL_TIME"
+     },
+     "betOfferType": {
+      "id": 2,
+      "name": "Wedstrijd ",
+      "englishName": "Match"
+     },
+     "eventId": 1028157139,
+     "outcomes": [
+      {
+       "id": 4396944640,
+       "label": "1",
+       "englishLabel": "1",
+       "odds": 1770,
+       "participant": "Standard Luik",
+       "type": "OT_ONE",
+       "betOfferId": 2710792557,
+       "changedDate": "2026-10-30T20:36:41Z",
+       "participantId": 1000000235,
+       "oddsFractional": "3/4",
+       "oddsAmerican": "-130",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 0
+      },
+      {
+       "id": 4396944641,
+       "label": "X",
+       "englishLabel": "X",
+       "odds": 4100,
+       "type": "OT_CROSS",
+       "betOfferId": 2710792557,
+       "changedDate": "2026-10-30T20:36:41Z",
+       "oddsFractional": "3/1",
+       "oddsAmerican": "310",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 1
+      },
+      {
+       "id": 4396944642,
+       "label": "2",
+       "englishLabel": "2",
+       "odds": 4500,
+       "participant": "SK Beveren",
+       "type": "OT_TWO",
+       "betOfferId": 2710792557,
+       "changedDate": "2026-10-30T20:36:41Z",
+       "participantId": 1000818435,
+       "oddsFractional": "7/2",
+       "oddsAmerican": "350",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 2
+      }
+     ],
+     "tags": [
+      "OFFERED_PREMATCH",
+      "OFFERED_LIVE",
+      "BET_BUILDER",
+      "MAIN"
+     ],
+     "sortOrder": 1,
+     "cashOutStatus": "ENABLED"
+    },
+    {
+     "id": 2710792577,
+     "criterion": {
+      "id": 1001159926,
+      "label": "Totaal aantal doelpunten",
+      "englishLabel": "Total Goals",
+      "order": [],
+      "occurrenceType": "GOALS",
+      "lifetime": "FULL_TIME"
+     },
+     "betOfferType": {
+      "id": 6,
+      "name": "Over/Onder",
+      "englishName": "Over/Under"
+     },
+     "eventId": 1028157139,
+     "outcomes": [
+      {
+       "id": 4396944697,
+       "label": "Meer dan",
+       "englishLabel": "Over",
+       "odds": 1560,
+       "line": 2500,
+       "type": "OT_OVER",
+       "betOfferId": 2710792577,
+       "changedDate": "2026-11-05T10:06:19Z",
+       "oddsFractional": "11/20",
+       "oddsAmerican": "-180",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 0
+      },
+      {
+       "id": 4396944698,
+       "label": "Minder dan",
+       "englishLabel": "Under",
+       "odds": 2380,
+       "line": 2500,
+       "type": "OT_UNDER",
+       "betOfferId": 2710792577,
+       "changedDate": "2026-11-05T10:06:19Z",
+       "oddsFractional": "11/8",
+       "oddsAmerican": "138",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 1
+      }
+     ],
+     "tags": [
+      "OFFERED_PREMATCH",
+      "OFFERED_LIVE",
+      "MAIN_LINE",
+      "BET_BUILDER"
+     ],
+     "sortOrder": 2,
+     "cashOutStatus": "ENABLED"
+    }
+   ]
+  },
+  {
+   "event": {
+    "id": 1028157125,
+    "name": "Westerlo - Sporting de Charleroi",
+    "nameDelimiter": "-",
+    "englishName": "Westerlo - Sporting de Charleroi",
+    "homeName": "Westerlo",
+    "awayName": "Sporting de Charleroi",
+    "start": "2026-11-07T15:00:00Z",
+    "group": "Jupiler Pro League",
+    "groupId": 1000094965,
+    "path": [
+     {
+      "id": 1000093190,
+      "name": "Voetbal",
+      "englishName": "Football",
+      "termKey": "football"
+     },
+     {
+      "id": 1000461740,
+      "name": "België",
+      "englishName": "Belgium",
+      "termKey": "belgium"
+     },
+     {
+      "id": 1000094965,
+      "name": "Jupiler Pro League",
+      "englishName": "Jupiler Pro League",
+      "termKey": "jupiler_pro_league"
+     }
+    ],
+    "nonLiveBoCount": 263,
+    "sport": "FOOTBALL",
+    "tags": [
+     "OFFERED_LIVE",
+     "BET_BUILDER",
+     "MATCH"
+    ],
+    "state": "NOT_STARTED"
+   },
+   "betOffers": [
+    {
+     "id": 2711128429,
+     "criterion": {
+      "id": 1001159858,
+      "label": "Reguliere speeltijd",
+      "englishLabel": "Full Time",
+      "order": [],
+      "occurrenceType": "GOALS",
+      "lifetime": "FULL_TIME"
+     },
+     "betOfferType": {
+      "id": 2,
+      "name": "Wedstrijd ",
+      "englishName": "Match"
+     },
+     "eventId": 1028157125,
+     "outcomes": [
+      {
+       "id": 4397961114,
+       "label": "1",
+       "englishLabel": "1",
+       "odds": 2800,
+       "participant": "Westerlo",
+       "type": "OT_ONE",
+       "betOfferId": 2711128429,
+       "changedDate": "2026-11-05T10:06:48Z",
+       "participantId": 1000006386,
+       "oddsFractional": "9/5",
+       "oddsAmerican": "180",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 0
+      },
+      {
+       "id": 4397961115,
+       "label": "X",
+       "englishLabel": "X",
+       "odds": 3850,
+       "type": "OT_CROSS",
+       "betOfferId": 2711128429,
+       "changedDate": "2026-11-05T10:06:48Z",
+       "oddsFractional": "14/5",
+       "oddsAmerican": "285",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 1
+      },
+      {
+       "id": 4397961116,
+       "label": "2",
+       "englishLabel": "2",
+       "odds": 2430,
+       "participant": "Sporting de Charleroi",
+       "type": "OT_TWO",
+       "betOfferId": 2711128429,
+       "changedDate": "2026-11-05T10:06:48Z",
+       "participantId": 1002206222,
+       "oddsFractional": "7/5",
+       "oddsAmerican": "143",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 2
+      }
+     ],
+     "tags": [
+      "OFFERED_PREMATCH",
+      "OFFERED_LIVE",
+      "BET_BUILDER",
+      "MAIN"
+     ],
+     "sortOrder": 1,
+     "cashOutStatus": "ENABLED"
+    },
+    {
+     "id": 2711096731,
+     "criterion": {
+      "id": 1001159926,
+      "label": "Totaal aantal doelpunten",
+      "englishLabel": "Total Goals",
+      "order": [],
+      "occurrenceType": "GOALS",
+      "lifetime": "FULL_TIME"
+     },
+     "betOfferType": {
+      "id": 6,
+      "name": "Over/Onder",
+      "englishName": "Over/Under"
+     },
+     "eventId": 1028157125,
+     "outcomes": [
+      {
+       "id": 4397995548,
+       "label": "Meer dan",
+       "englishLabel": "Over",
+       "odds": 2250,
+       "line": 3500,
+       "type": "OT_OVER",
+       "betOfferId": 2711096731,
+       "changedDate": "2026-11-05T10:06:48Z",
+       "oddsFractional": "5/4",
+       "oddsAmerican": "125",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 0
+      },
+      {
+       "id": 4397995549,
+       "label": "Minder dan",
+       "englishLabel": "Under",
+       "odds": 1610,
+       "line": 3500,
+       "type": "OT_UNDER",
+       "betOfferId": 2711096731,
+       "changedDate": "2026-11-05T10:06:48Z",
+       "oddsFractional": "3/5",
+       "oddsAmerican": "-165",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 1
+      }
+     ],
+     "tags": [
+      "OFFERED_PREMATCH",
+      "OFFERED_LIVE",
+      "MAIN_LINE",
+      "BET_BUILDER"
+     ],
+     "sortOrder": 2,
+     "cashOutStatus": "ENABLED"
+    }
+   ]
+  },
+  {
+   "event": {
+    "id": 1028157127,
+    "name": "OH Leuven - KV Mechelen",
+    "nameDelimiter": "-",
+    "englishName": "OH Leuven - KV Mechelen",
+    "homeName": "OH Leuven",
+    "awayName": "KV Mechelen",
+    "start": "2026-11-07T17:15:00Z",
+    "group": "Jupiler Pro League",
+    "groupId": 1000094965,
+    "path": [
+     {
+      "id": 1000093190,
+      "name": "Voetbal",
+      "englishName": "Football",
+      "termKey": "football"
+     },
+     {
+      "id": 1000461740,
+      "name": "België",
+      "englishName": "Belgium",
+      "termKey": "belgium"
+     },
+     {
+      "id": 1000094965,
+      "name": "Jupiler Pro League",
+      "englishName": "Jupiler Pro League",
+      "termKey": "jupiler_pro_league"
+     }
+    ],
+    "nonLiveBoCount": 231,
+    "sport": "FOOTBALL",
+    "tags": [
+     "OFFERED_LIVE",
+     "BET_BUILDER",
+     "MATCH"
+    ],
+    "state": "NOT_STARTED"
+   },
+   "betOffers": [
+    {
+     "id": 2711203959,
+     "criterion": {
+      "id": 1001159858,
+      "label": "Reguliere speeltijd",
+      "englishLabel": "Full Time",
+      "order": [],
+      "occurrenceType": "GOALS",
+      "lifetime": "FULL_TIME"
+     },
+     "betOfferType": {
+      "id": 2,
+      "name": "Wedstrijd ",
+      "englishName": "Match"
+     },
+     "eventId": 1028157127,
+     "outcomes": [
+      {
+       "id": 4398165841,
+       "label": "1",
+       "englishLabel": "1",
+       "odds": 2330,
+       "participant": "OH Leuven",
+       "type": "OT_ONE",
+       "betOfferId": 2711203959,
+       "changedDate": "2026-11-01T15:29:20Z",
+       "participantId": 1000194369,
+       "oddsFractional": "13/10",
+       "oddsAmerican": "133",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 0
+      },
+      {
+       "id": 4398165842,
+       "label": "X",
+       "englishLabel": "X",
+       "odds": 3700,
+       "type": "OT_CROSS",
+       "betOfferId": 2711203959,
+       "changedDate": "2026-11-01T15:29:20Z",
+       "oddsFractional": "27/10",
+       "oddsAmerican": "270",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 1
+      },
+      {
+       "id": 4398165843,
+       "label": "2",
+       "englishLabel": "2",
+       "odds": 3050,
+       "participant": "KV Mechelen",
+       "type": "OT_TWO",
+       "betOfferId": 2711203959,
+       "changedDate": "2026-11-01T15:29:20Z",
+       "participantId": 1000015734,
+       "oddsFractional": "41/20",
+       "oddsAmerican": "205",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 2
+      }
+     ],
+     "tags": [
+      "OFFERED_PREMATCH",
+      "OFFERED_LIVE",
+      "BET_BUILDER",
+      "MAIN"
+     ],
+     "sortOrder": 1,
+     "cashOutStatus": "ENABLED"
+    },
+    {
+     "id": 2711178216,
+     "criterion": {
+      "id": 1001159926,
+      "label": "Totaal aantal doelpunten",
+      "englishLabel": "Total Goals",
+      "order": [],
+      "occurrenceType": "GOALS",
+      "lifetime": "FULL_TIME"
+     },
+     "betOfferType": {
+      "id": 6,
+      "name": "Over/Onder",
+      "englishName": "Over/Under"
+     },
+     "eventId": 1028157127,
+     "outcomes": [
+      {
+       "id": 4398180400,
+       "label": "Meer dan",
+       "englishLabel": "Over",
+       "odds": 1670,
+       "line": 2500,
+       "type": "OT_OVER",
+       "betOfferId": 2711178216,
+       "changedDate": "2026-11-01T15:29:20Z",
+       "oddsFractional": "4/6",
+       "oddsAmerican": "-150",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 0
+      },
+      {
+       "id": 4398180401,
+       "label": "Minder dan",
+       "englishLabel": "Under",
+       "odds": 2160,
+       "line": 2500,
+       "type": "OT_UNDER",
+       "betOfferId": 2711178216,
+       "changedDate": "2026-11-01T15:29:20Z",
+       "oddsFractional": "23/20",
+       "oddsAmerican": "116",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 1
+      }
+     ],
+     "tags": [
+      "OFFERED_PREMATCH",
+      "OFFERED_LIVE",
+      "MAIN_LINE",
+      "BET_BUILDER"
+     ],
+     "sortOrder": 2,
+     "cashOutStatus": "ENABLED"
+    }
+   ]
+  }
+ ],
+ "soonMode": "DAILY",
+ "defaultEventType": "matches"
+}

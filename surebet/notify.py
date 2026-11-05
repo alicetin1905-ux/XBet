@@ -36,6 +36,9 @@ def format_surebet(sb: Surebet, currency: str = "€") -> str:
             f"  {_outcome_label(q.outcome, q.point):<{width}}  @ {odds_text(q):<{owidth}}  {q.bookmaker_title:<{bwidth}}"
             f"  inzet {currency}{leg.stake:,.2f} -> {currency}{leg.payout:,.2f}"
         )
+    if len(set(sb.matched_names.values())) > 1:
+        names = "; ".join(f"{book}: {name}" for book, name in sb.matched_names.items())
+        lines.append(f"  Controleer koppeling -> {names}")
     lines.append(
         f"  Totaal inzet {currency}{sb.total_stake:,.2f} | "
         f"gegarandeerde winst {currency}{sb.guaranteed_profit:,.2f}"

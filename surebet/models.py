@@ -42,6 +42,7 @@ class Surebet:
     profit_pct: float = 0.0  # theoretical profit on total stake, in percent
     total_stake: float = 0.0
     guaranteed_profit: float = 0.0  # worst-case profit after stake rounding
+    matched_names: dict[str, str] = field(default_factory=dict)  # bookmaker -> its name for the game
 
     @property
     def key(self) -> tuple:

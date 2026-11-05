@@ -1,8 +1,60 @@
 # XBet – Surebet finder
 
-Een bot die **surebets** (arbitrage) zoekt tussen bookmakers. Hij haalt odds op via
-[The Odds API](https://the-odds-api.com), vergelijkt per wedstrijd de beste odds per
-uitkomst en meldt combinaties waarbij je, ongeacht de uitslag, winst maakt.
+Een bot die **surebets** (arbitrage) zoekt tussen bookmakers. Hij leest de odds rechtstreeks
+bij Belgische bookmakers (of via [The Odds API](https://the-odds-api.com)), vergelijkt per
+wedstrijd de beste odds per uitkomst en meldt combinaties waarbij je, ongeacht de uitslag,
+winst maakt.
+
+## Belgische bookmakers (aanbevolen)
+
+The Odds API heeft geen Belgische bookmakers. Daarom kan de bot ze ook rechtstreeks uitlezen,
+uit dezelfde odds-feed die hun website in je browser laadt.
+
+| Bookmaker | Platform | Status |
+|---|---|---|
+| Unibet (`unibet`) | Kambi | ✅ werkt |
+| Napoleon Sports (`napoleon`) | Kambi | ✅ ingebouwd, werkt alleen vanaf een Belgische verbinding |
+| Bwin.be (`bwin`) | Entain | ⏳ opname nodig (zie hieronder) |
+| Betcenter (`betcenter`) | EveryMatrix | ⏳ opname nodig |
+| Magic Betting (`magicbetting`) | Digitain | ⏳ opname nodig |
+
+**Draai dit op je eigen pc met een Belgische internetverbinding.** De meeste sites blokkeren
+bezoekers uit het buitenland en van servers.
+
+```bash
+python -m surebet --books unibet,napoleon
+python -m surebet --books unibet,napoleon --leagues football/belgium/jupiler_pro_league --watch 120
+```
+
+Zonder `--leagues` kijkt de bot naar de wedstrijden van de komende ~24 uur in voetbal, tennis,
+basketbal en ijshockey. De bot wacht standaard 1 seconde tussen verzoeken (`--delay`) om de
+sites niet te belasten. Hou het scaninterval redelijk (bv. `--watch 120`).
+
+Unibet en Napoleon krijgen hun odds allebei van Kambi en liggen daardoor vaak dicht bij elkaar.
+Surebets zitten vooral *tussen verschillende platforms*, dus de echte winst komt pas met
+Bwin, Betcenter en Magic Betting erbij.
+
+### Een nieuwe bookmaker toevoegen: opname maken
+
+Voor Bwin, Betcenter en Magic Betting moet eerst bekeken worden hoe hun site de odds laadt. Dat
+kan alleen vanaf een Belgische verbinding:
+
+```bash
+pip install playwright
+python -m playwright install chromium
+python tools/capture_site.py bwin        # of betcenter, magicbetting
+```
+
+Er opent een browser. Klik een minuut rond (voetbal, een competitie, een wedstrijd) en druk
+op Enter. **Log niet in**, dat is niet nodig. Cookies en inloggegevens worden nooit opgeslagen.
+De opname komt in `captures/`; commit en push die, dan kan de koppeling gebouwd worden.
+
+### Hoe worden wedstrijden gekoppeld?
+
+Elke bookmaker schrijft namen anders ("Standard Luik" / "Standard de Liège"). De bot koppelt op
+sport, aftraptijd (max. 15 min verschil) en teamnamen (beide teams moeten lijken). Als de
+namen verschillen, zie je bij de surebet een regel `Controleer koppeling -> ...`. **Kijk die
+altijd na**: een verkeerde koppeling lijkt een surebet, maar is het niet.
 
 ## Hoe het werkt
 
@@ -36,7 +88,7 @@ Python 3.10+ is genoeg; de bot zelf heeft geen externe dependencies.
 pip install -r requirements-dev.txt   # alleen nodig voor de tests
 ```
 
-## Gebruik
+## Gebruik via The Odds API
 
 Probeer het eerst met voorbeelddata (geen API-key nodig):
 
@@ -99,8 +151,12 @@ Surebets zijn in theorie risicoloos, in de praktijk niet helemaal:
 - **Verschillende regels**: bv. wat er gebeurt bij een gestaakte wedstrijd, of een tennisser
   die opgeeft, kan per bookmaker verschillen.
 - **Palpable errors**: bookmakers mogen weddenschappen op duidelijk foute odds annuleren.
-- Gok alleen bij **legale, vergunde aanbieders** in jouw land (in Nederland: met een
-  KSA-vergunning) en alleen met geld dat je kunt missen.
+- **Voorwaarden van de bookmakers**: automatisch odds uitlezen staat meestal niet toegestaan in
+  hun gebruiksvoorwaarden. De bot leest alleen publieke odds, zonder in te loggen en op een
+  rustig tempo. Gebruik hem nooit met je ingelogde account en verwacht dat een site je IP
+  tijdelijk kan blokkeren.
+- Gok alleen bij **legale, vergunde aanbieders** (in België: met een F1+-vergunning van de
+  Kansspelcommissie, vanaf 21 jaar) en alleen met geld dat je kunt missen.
 
 ## Tests
 
@@ -114,8 +170,10 @@ python -m pytest
 surebet/
   arbitrage.py   detectie en inzetberekening
   odds_api.py    client voor The Odds API v4
+  sources/       Belgische bookmakers rechtstreeks (kambi.py) en koppelen van wedstrijden (merge.py)
   notify.py      tekstopmaak en Telegram
   cli.py         command line interface
 examples/sample_odds.json   demo-data
+tools/capture_site.py       opname maken van een bookmaker-site
 tests/                      unit tests
 ```

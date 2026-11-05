@@ -4,6 +4,7 @@ Examples:
     python -m surebet --demo
     python -m surebet --sports soccer_epl,soccer_netherlands_eredivisie --markets h2h,totals
     python -m surebet --sports upcoming --watch 300 --telegram
+    python -m surebet --books unibet,napoleon --watch 120
 """
 
 from __future__ import annotations
@@ -18,6 +19,7 @@ from pathlib import Path
 from .arbitrage import find_surebets
 from .notify import format_surebet, send_telegram
 from .odds_api import OddsApiClient, OddsApiError
+from .sources import AVAILABLE, PLANNED, SourceError, build_sources, fetch_all, to_odds_events
 
 DEMO_FILE = Path(__file__).resolve().parent.parent / "examples" / "sample_odds.json"
 
@@ -56,6 +58,15 @@ def build_parser() -> argparse.ArgumentParser:
     src.add_argument("--markets", default="h2h", help="markten: h2h,totals,spreads (elke markt kost quota)")
     src.add_argument("--list-sports", action="store_true", help="toon beschikbare sport keys en stop")
 
+    be = p.add_argument_group("Belgische bookmakers rechtstreeks (draai dit vanaf een Belgische verbinding)")
+    be.add_argument("--books", help=f"bookmakers om uit te lezen: {', '.join(AVAILABLE)} "
+                                     f"(nog niet: {', '.join(PLANNED)})")
+    be.add_argument("--book-sports", default="football,tennis,basketball,ice_hockey",
+                    help="sporten (komende ~24 uur), standaard football,tennis,basketball,ice_hockey")
+    be.add_argument("--leagues", default="",
+                    help="extra competities met alle wedstrijden, bv. football/belgium/jupiler_pro_league")
+    be.add_argument("--delay", type=float, default=1.0, help="seconden tussen verzoeken (standaard 1)")
+
     f = p.add_argument_group("filters")
     f.add_argument("--stake", type=float, default=100.0, help="totale inzet per surebet (standaard 100)")
     f.add_argument("--min-profit", type=float, default=0.5, help="minimale winst in %% (standaard 0.5)")
@@ -77,7 +88,14 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def load_events(args, client: OddsApiClient | None) -> list[dict]:
+def load_events(args, client: OddsApiClient | None, sources=None) -> list[dict]:
+    if sources:
+        book_events, errors = fetch_all(sources)
+        for err in errors:
+            print(f"Waarschuwing: {err}", file=sys.stderr)
+        if not book_events:
+            raise SourceError("Geen enkele bookmaker gaf odds terug.")
+        return to_odds_events(book_events)
     if args.demo or args.file:
         path = Path(args.file) if args.file else DEMO_FILE
         return json.loads(path.read_text())
@@ -123,7 +141,18 @@ def main(argv: list[str] | None = None) -> int:
 
     offline = args.demo or bool(args.file)
     client = None
-    if not offline:
+    sources = None
+    if args.books:
+        try:
+            sources = build_sources(_csv(args.books), sports=_csv(args.book_sports),
+                                    leagues=_csv(args.leagues), delay=args.delay)
+        except (SourceError, ValueError) as exc:
+            print(exc, file=sys.stderr)
+            return 2
+        if len(sources) < 2:
+            print("Je hebt minstens 2 bookmakers nodig om surebets te vinden.", file=sys.stderr)
+            return 2
+    elif not offline:
         try:
             client = OddsApiClient(args.api_key)
         except OddsApiError as exc:
@@ -147,8 +176,8 @@ def main(argv: list[str] | None = None) -> int:
     seen: dict[tuple, float] = {}
     while True:
         try:
-            events = load_events(args, client)
-        except (OddsApiError, OSError, json.JSONDecodeError) as exc:
+            events = load_events(args, client, sources)
+        except (OddsApiError, SourceError, OSError, json.JSONDecodeError) as exc:
             print(f"Fout bij ophalen odds: {exc}", file=sys.stderr)
             if not args.watch:
                 return 1
@@ -173,7 +202,8 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps([to_json(sb) for sb in surebets], indent=2, ensure_ascii=False))
         else:
             stamp = time.strftime("%H:%M:%S")
-            print(f"[{stamp}] {len(events)} wedstrijden gescand, {len(surebets)} surebet(s) gevonden.")
+            what = "gekoppelde wedstrijden" if sources else "wedstrijden"
+            print(f"[{stamp}] {len(events)} {what} gescand, {len(surebets)} surebet(s) gevonden.")
             if client and client.requests_remaining is not None:
                 print(f"           API-quota: {client.requests_used} gebruikt, {client.requests_remaining} over.")
             for sb in surebets:

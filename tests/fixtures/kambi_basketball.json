@@ -1,0 +1,442 @@
+{
+ "events": [
+  {
+   "event": {
+    "id": 1028726951,
+    "name": "Jonavos SK - BC Rytas Vilnius",
+    "nameDelimiter": "-",
+    "englishName": "Jonavos SK - BC Rytas Vilnius",
+    "homeName": "Jonavos SK",
+    "awayName": "BC Rytas Vilnius",
+    "start": "2026-11-05T16:50:00Z",
+    "group": "LKL",
+    "groupId": 2000050558,
+    "path": [
+     {
+      "id": 1000093204,
+      "name": "Basketbal",
+      "englishName": "Basketball",
+      "termKey": "basketball"
+     },
+     {
+      "id": 2000050556,
+      "name": "Litouwen",
+      "englishName": "Lithuania",
+      "termKey": "lithuania"
+     },
+     {
+      "id": 2000050558,
+      "name": "LKL",
+      "englishName": "LKL",
+      "termKey": "lkl"
+     }
+    ],
+    "nonLiveBoCount": 8,
+    "sport": "BASKETBALL",
+    "tags": [
+     "STREAMED_WEB",
+     "OFFERED_LIVE",
+     "BET_BUILDER",
+     "STREAMED_MOBILE",
+     "MATCH"
+    ],
+    "state": "NOT_STARTED"
+   },
+   "betOffers": [
+    {
+     "id": 2712690533,
+     "criterion": {
+      "id": 1001159732,
+      "label": "Inclusief Extra Tijd",
+      "englishLabel": "Moneyline - Including Overtime",
+      "order": [],
+      "occurrenceType": "POINTS",
+      "lifetime": "FULL_TIME_OVERTIME"
+     },
+     "betOfferType": {
+      "id": 2,
+      "name": "Wedstrijd ",
+      "englishName": "Match"
+     },
+     "eventId": 1028726951,
+     "outcomes": [
+      {
+       "id": 4402845122,
+       "label": "Jonavos SK",
+       "englishLabel": "Jonavos SK",
+       "odds": 3700,
+       "participant": "Jonavos SK",
+       "type": "OT_ONE",
+       "betOfferId": 2712690533,
+       "changedDate": "2026-11-04T05:24:47Z",
+       "participantId": 1003630297,
+       "oddsFractional": "27/10",
+       "oddsAmerican": "270",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 0
+      },
+      {
+       "id": 4402845123,
+       "label": "BC Rytas Vilnius",
+       "englishLabel": "BC Rytas Vilnius",
+       "odds": 1230,
+       "participant": "BC Rytas Vilnius",
+       "type": "OT_TWO",
+       "betOfferId": 2712690533,
+       "changedDate": "2026-11-04T05:24:47Z",
+       "participantId": 1000062151,
+       "oddsFractional": "2/9",
+       "oddsAmerican": "-435",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 1
+      }
+     ],
+     "tags": [
+      "OFFERED_PREMATCH",
+      "OFFERED_LIVE",
+      "BET_BUILDER",
+      "MAIN"
+     ],
+     "sortOrder": 1,
+     "cashOutStatus": "ENABLED"
+    },
+    {
+     "id": 2712722258,
+     "criterion": {
+      "id": 1001159512,
+      "label": "Handicap - Inclusief Extra Tijd",
+      "englishLabel": "Point Spread - Including Overtime",
+      "order": [],
+      "occurrenceType": "POINTS",
+      "lifetime": "FULL_TIME_OVERTIME"
+     },
+     "betOfferType": {
+      "id": 1,
+      "name": "Handicap",
+      "englishName": "Handicap"
+     },
+     "eventId": 1028726951,
+     "outcomes": [
+      {
+       "id": 4402879738,
+       "label": "Jonavos SK",
+       "englishLabel": "Jonavos SK",
+       "odds": 1800,
+       "line": 9500,
+       "participant": "Jonavos SK",
+       "type": "OT_ONE",
+       "betOfferId": 2712722258,
+       "changedDate": "2026-11-04T05:24:46Z",
+       "participantId": 1003630297,
+       "oddsFractional": "4/5",
+       "oddsAmerican": "-125",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 0
+      },
+      {
+       "id": 4402879739,
+       "label": "BC Rytas Vilnius",
+       "englishLabel": "BC Rytas Vilnius",
+       "odds": 1900,
+       "line": -9500,
+       "participant": "BC Rytas Vilnius",
+       "type": "OT_TWO",
+       "betOfferId": 2712722258,
+       "changedDate": "2026-11-04T05:24:46Z",
+       "participantId": 1000062151,
+       "oddsFractional": "9/10",
+       "oddsAmerican": "-112",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 1
+      }
+     ],
+     "tags": [
+      "OFFERED_PREMATCH",
+      "OFFERED_LIVE",
+      "MAIN_LINE",
+      "BET_BUILDER"
+     ],
+     "sortOrder": 2,
+     "cashOutStatus": "ENABLED"
+    },
+    {
+     "id": 2712690532,
+     "criterion": {
+      "id": 1001159509,
+      "label": "Totaal Aantal Punten - Inclusief Extra Tijd",
+      "englishLabel": "Total Points - Including Overtime",
+      "order": [],
+      "occurrenceType": "POINTS",
+      "lifetime": "FULL_TIME_OVERTIME"
+     },
+     "betOfferType": {
+      "id": 6,
+      "name": "Over/Onder",
+      "englishName": "Over/Under"
+     },
+     "eventId": 1028726951,
+     "outcomes": [
+      {
+       "id": 4402845120,
+       "label": "Meer dan",
+       "englishLabel": "Over",
+       "odds": 2000,
+       "line": 171500,
+       "type": "OT_OVER",
+       "betOfferId": 2712690532,
+       "changedDate": "2026-11-05T12:02:56Z",
+       "oddsFractional": "Evens",
+       "oddsAmerican": "100",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 0
+      },
+      {
+       "id": 4402845121,
+       "label": "Minder dan",
+       "englishLabel": "Under",
+       "odds": 1720,
+       "line": 171500,
+       "type": "OT_UNDER",
+       "betOfferId": 2712690532,
+       "changedDate": "2026-11-05T12:02:56Z",
+       "oddsFractional": "7/10",
+       "oddsAmerican": "-139",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 1
+      }
+     ],
+     "tags": [
+      "OFFERED_PREMATCH",
+      "OFFERED_LIVE",
+      "MAIN_LINE",
+      "BET_BUILDER"
+     ],
+     "sortOrder": 3,
+     "cashOutStatus": "ENABLED"
+    }
+   ]
+  },
+  {
+   "event": {
+    "id": 1028927810,
+    "name": "KK Spartak Subotica - Zadar",
+    "nameDelimiter": "-",
+    "englishName": "KK Spartak Subotica - Zadar",
+    "homeName": "KK Spartak Subotica",
+    "awayName": "Zadar",
+    "start": "2026-11-05T17:00:00Z",
+    "group": "ABA League",
+    "groupId": 1000124700,
+    "path": [
+     {
+      "id": 1000093204,
+      "name": "Basketbal",
+      "englishName": "Basketball",
+      "termKey": "basketball"
+     },
+     {
+      "id": 1000124700,
+      "name": "ABA League",
+      "englishName": "ABA League",
+      "termKey": "aba_league"
+     }
+    ],
+    "nonLiveBoCount": 37,
+    "sport": "BASKETBALL",
+    "tags": [
+     "OFFERED_LIVE",
+     "BET_BUILDER",
+     "MATCH"
+    ],
+    "state": "NOT_STARTED"
+   },
+   "betOffers": [
+    {
+     "id": 2713154430,
+     "criterion": {
+      "id": 1001159732,
+      "label": "Inclusief Extra Tijd",
+      "englishLabel": "Moneyline - Including Overtime",
+      "order": [],
+      "occurrenceType": "POINTS",
+      "lifetime": "FULL_TIME_OVERTIME"
+     },
+     "betOfferType": {
+      "id": 2,
+      "name": "Wedstrijd ",
+      "englishName": "Match"
+     },
+     "eventId": 1028927810,
+     "outcomes": [
+      {
+       "id": 4404148713,
+       "label": "KK Spartak Subotica",
+       "englishLabel": "KK Spartak Subotica",
+       "odds": 1320,
+       "participant": "KK Spartak Subotica",
+       "type": "OT_ONE",
+       "betOfferId": 2713154430,
+       "changedDate": "2026-11-05T01:05:45Z",
+       "participantId": 1030183005,
+       "oddsFractional": "8/25",
+       "oddsAmerican": "-315",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 0
+      },
+      {
+       "id": 4404148714,
+       "label": "Zadar",
+       "englishLabel": "Zadar",
+       "odds": 3100,
+       "participant": "Zadar",
+       "type": "OT_TWO",
+       "betOfferId": 2713154430,
+       "changedDate": "2026-11-05T01:05:45Z",
+       "participantId": 1000042569,
+       "oddsFractional": "21/10",
+       "oddsAmerican": "210",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 1
+      }
+     ],
+     "tags": [
+      "OFFERED_PREMATCH",
+      "OFFERED_LIVE",
+      "BET_BUILDER",
+      "MAIN"
+     ],
+     "sortOrder": 1,
+     "cashOutStatus": "ENABLED"
+    },
+    {
+     "id": 2713122829,
+     "criterion": {
+      "id": 1001159512,
+      "label": "Handicap - Inclusief Extra Tijd",
+      "englishLabel": "Point Spread - Including Overtime",
+      "order": [],
+      "occurrenceType": "POINTS",
+      "lifetime": "FULL_TIME_OVERTIME"
+     },
+     "betOfferType": {
+      "id": 1,
+      "name": "Handicap",
+      "englishName": "Handicap"
+     },
+     "eventId": 1028927810,
+     "outcomes": [
+      {
+       "id": 4404151807,
+       "label": "KK Spartak Subotica",
+       "englishLabel": "KK Spartak Subotica",
+       "odds": 1830,
+       "line": -6500,
+       "participant": "KK Spartak Subotica",
+       "type": "OT_ONE",
+       "betOfferId": 2713122829,
+       "changedDate": "2026-11-05T01:05:45Z",
+       "participantId": 1030183005,
+       "oddsFractional": "41/50",
+       "oddsAmerican": "-121",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 0
+      },
+      {
+       "id": 4404151808,
+       "label": "Zadar",
+       "englishLabel": "Zadar",
+       "odds": 1870,
+       "line": 6500,
+       "participant": "Zadar",
+       "type": "OT_TWO",
+       "betOfferId": 2713122829,
+       "changedDate": "2026-11-05T01:05:45Z",
+       "participantId": 1000042569,
+       "oddsFractional": "17/20",
+       "oddsAmerican": "-115",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 1
+      }
+     ],
+     "tags": [
+      "OFFERED_PREMATCH",
+      "OFFERED_LIVE",
+      "MAIN_LINE",
+      "BET_BUILDER"
+     ],
+     "sortOrder": 2,
+     "cashOutStatus": "ENABLED"
+    },
+    {
+     "id": 2713154445,
+     "criterion": {
+      "id": 1001159509,
+      "label": "Totaal Aantal Punten - Inclusief Extra Tijd",
+      "englishLabel": "Total Points - Including Overtime",
+      "order": [],
+      "occurrenceType": "POINTS",
+      "lifetime": "FULL_TIME_OVERTIME"
+     },
+     "betOfferType": {
+      "id": 6,
+      "name": "Over/Onder",
+      "englishName": "Over/Under"
+     },
+     "eventId": 1028927810,
+     "outcomes": [
+      {
+       "id": 4404148743,
+       "label": "Meer dan",
+       "englishLabel": "Over",
+       "odds": 1810,
+       "line": 158500,
+       "type": "OT_OVER",
+       "betOfferId": 2713154445,
+       "changedDate": "2026-11-05T09:39:40Z",
+       "oddsFractional": "4/5",
+       "oddsAmerican": "-124",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 0
+      },
+      {
+       "id": 4404148744,
+       "label": "Minder dan",
+       "englishLabel": "Under",
+       "odds": 1890,
+       "line": 158500,
+       "type": "OT_UNDER",
+       "betOfferId": 2713154445,
+       "changedDate": "2026-11-05T09:39:40Z",
+       "oddsFractional": "22/25",
+       "oddsAmerican": "-113",
+       "status": "OPEN",
+       "cashOutStatus": "ENABLED",
+       "displayOrder": 1
+      }
+     ],
+     "tags": [
+      "OFFERED_PREMATCH",
+      "OFFERED_LIVE",
+      "MAIN_LINE",
+      "BET_BUILDER"
+     ],
+     "sortOrder": 3,
+     "cashOutStatus": "ENABLED"
+    }
+   ]
+  }
+ ],
+ "soonMode": "MONTHLY",
+ "defaultEventType": "matches"
+}

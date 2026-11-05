@@ -170,6 +170,10 @@ def find_surebets(
                     profit_pct=profit_pct,
                     total_stake=staked,
                     guaranteed_profit=min(payouts) - staked,
+                    matched_names={
+                        title: name for title, name in event.get("matched_names", {}).items()
+                        if title in {q.bookmaker_title for q in quotes}
+                    },
                 )
             )
 
