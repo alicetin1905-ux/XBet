@@ -5,6 +5,7 @@ Run this on your own computer, on a Belgian internet connection:
     pip install playwright
     python -m playwright install chromium
     python tools/capture_site.py bwin          # or: betcenter, magicbetting
+    python tools/capture_site.py https://www.bingoalsport.be/   # any other bookmaker
 
 A browser window opens on the football page. Click around a bit (a
 competition, a match) for about a minute, then press Enter in the terminal.
@@ -19,6 +20,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import threading
 import time
@@ -35,10 +37,15 @@ SKIP_HEADERS = {"cookie", "set-cookie", "authorization", "x-auth-token"}
 
 
 def main() -> int:
-    if len(sys.argv) != 2 or sys.argv[1] not in SITES:
-        print(f"Gebruik: python tools/capture_site.py <{'|'.join(SITES)}>")
+    arg = sys.argv[1] if len(sys.argv) == 2 else ""
+    if arg in SITES:
+        site, url = arg, SITES[arg]
+    elif arg.startswith("https://"):
+        url = arg
+        site = re.sub(r"[^a-z0-9]+", "-", arg.split("/")[2].lower()).strip("-")
+    else:
+        print(f"Gebruik: python tools/capture_site.py <{'|'.join(SITES)}|https://...>")
         return 2
-    site = sys.argv[1]
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
@@ -83,7 +90,7 @@ def main() -> int:
         page = browser.new_page(locale="nl-BE")
         page.on("response", on_response)
         page.on("websocket", on_websocket)
-        page.goto(SITES[site], wait_until="domcontentloaded", timeout=60_000)
+        page.goto(url, wait_until="domcontentloaded", timeout=60_000)
         # Playwright only handles events while we call into it, so wait for Enter on a thread
         # and keep the browser busy in the meantime.
         done = threading.Event()
