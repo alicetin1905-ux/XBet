@@ -1,0 +1,92 @@
+[
+  {
+    "id": "demo-eredivisie-1",
+    "sport_key": "soccer_netherlands_eredivisie",
+    "sport_title": "Eredivisie",
+    "commence_time": "2030-03-01T19:00:00Z",
+    "home_team": "Ajax",
+    "away_team": "PSV",
+    "bookmakers": [
+      {"key": "bet365", "title": "Bet365", "last_update": "2030-03-01T10:00:00Z",
+       "markets": [{"key": "h2h", "outcomes": [
+         {"name": "Ajax", "price": 2.10}, {"name": "Draw", "price": 3.40}, {"name": "PSV", "price": 3.60}]}]},
+      {"key": "unibet_eu", "title": "Unibet", "last_update": "2030-03-01T10:00:00Z",
+       "markets": [{"key": "h2h", "outcomes": [
+         {"name": "Ajax", "price": 2.25}, {"name": "Draw", "price": 3.30}, {"name": "PSV", "price": 3.40}]}]},
+      {"key": "pinnacle", "title": "Pinnacle", "last_update": "2030-03-01T10:00:00Z",
+       "markets": [{"key": "h2h", "outcomes": [
+         {"name": "Ajax", "price": 2.15}, {"name": "Draw", "price": 3.75}, {"name": "PSV", "price": 3.50}]}]},
+      {"key": "williamhill", "title": "William Hill", "last_update": "2030-03-01T10:00:00Z",
+       "markets": [{"key": "h2h", "outcomes": [
+         {"name": "Ajax", "price": 2.05}, {"name": "Draw", "price": 3.50}, {"name": "PSV", "price": 3.90}]}]}
+    ]
+  },
+  {
+    "id": "demo-nba-1",
+    "sport_key": "basketball_nba",
+    "sport_title": "NBA",
+    "commence_time": "2030-03-02T01:30:00Z",
+    "home_team": "Los Angeles Lakers",
+    "away_team": "Boston Celtics",
+    "bookmakers": [
+      {"key": "draftkings", "title": "DraftKings", "last_update": "2030-03-01T10:00:00Z",
+       "markets": [
+         {"key": "h2h", "outcomes": [
+           {"name": "Los Angeles Lakers", "price": 2.05}, {"name": "Boston Celtics", "price": 1.80}]},
+         {"key": "totals", "outcomes": [
+           {"name": "Over", "price": 1.91, "point": 224.5}, {"name": "Under", "price": 1.91, "point": 224.5}]}]},
+      {"key": "fanduel", "title": "FanDuel", "last_update": "2030-03-01T10:00:00Z",
+       "markets": [
+         {"key": "h2h", "outcomes": [
+           {"name": "Los Angeles Lakers", "price": 1.95}, {"name": "Boston Celtics", "price": 1.98}]},
+         {"key": "totals", "outcomes": [
+           {"name": "Over", "price": 1.87, "point": 224.5}, {"name": "Under", "price": 1.95, "point": 224.5}]}]},
+      {"key": "betmgm", "title": "BetMGM", "last_update": "2030-03-01T10:00:00Z",
+       "markets": [
+         {"key": "totals", "outcomes": [
+           {"name": "Over", "price": 2.10, "point": 225.5}, {"name": "Under", "price": 1.75, "point": 225.5}]}]}
+    ]
+  },
+  {
+    "id": "demo-eredivisie-2",
+    "sport_key": "soccer_netherlands_eredivisie",
+    "sport_title": "Eredivisie",
+    "commence_time": "2030-03-01T14:30:00Z",
+    "home_team": "Feyenoord",
+    "away_team": "AZ Alkmaar",
+    "bookmakers": [
+      {"key": "bet365", "title": "Bet365", "last_update": "2030-03-01T10:00:00Z",
+       "markets": [
+         {"key": "h2h", "outcomes": [
+           {"name": "Feyenoord", "price": 1.85}, {"name": "Draw", "price": 4.20}, {"name": "AZ Alkmaar", "price": 4.20}]},
+         {"key": "totals", "outcomes": [
+           {"name": "Over", "price": 2.05, "point": 2.5}, {"name": "Under", "price": 1.80, "point": 2.5}]}]},
+      {"key": "unibet_eu", "title": "Unibet", "last_update": "2030-03-01T10:00:00Z",
+       "markets": [
+         {"key": "h2h", "outcomes": [
+           {"name": "Feyenoord", "price": 1.88}, {"name": "Draw", "price": 3.70}, {"name": "AZ Alkmaar", "price": 4.00}]},
+         {"key": "totals", "outcomes": [
+           {"name": "Over", "price": 1.90, "point": 2.5}, {"name": "Under", "price": 2.02, "point": 2.5}]}]},
+      {"key": "betfair_ex_eu", "title": "Betfair Exchange", "last_update": "2030-03-01T10:00:00Z",
+       "markets": [
+         {"key": "h2h", "outcomes": [
+           {"name": "Feyenoord", "price": 1.98}, {"name": "Draw", "price": 3.95}, {"name": "AZ Alkmaar", "price": 4.50}]}]}
+    ]
+  },
+  {
+    "id": "demo-tennis-1",
+    "sport_key": "tennis_atp_indian_wells",
+    "sport_title": "ATP Indian Wells",
+    "commence_time": "2030-03-03T18:00:00Z",
+    "home_team": "Player One",
+    "away_team": "Player Two",
+    "bookmakers": [
+      {"key": "bet365", "title": "Bet365", "last_update": "2030-03-01T10:00:00Z",
+       "markets": [{"key": "h2h", "outcomes": [
+         {"name": "Player One", "price": 1.60}, {"name": "Player Two", "price": 2.30}]}]},
+      {"key": "pinnacle", "title": "Pinnacle", "last_update": "2030-03-01T10:00:00Z",
+       "markets": [{"key": "h2h", "outcomes": [
+         {"name": "Player One", "price": 1.63}, {"name": "Player Two", "price": 2.40}]}]}
+    ]
+  }
+]
