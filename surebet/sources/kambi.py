@@ -1,4 +1,4 @@
-"""Bookmakers on the Kambi platform (Unibet BE, Napoleon Sports).
+"""Bookmakers on the Kambi platform (Unibet BE, Napoleon Sports, 711 Sports).
 
 Kambi serves the odds that these websites show from a public JSON feed, the
 same one the website itself loads in your browser.
@@ -16,6 +16,7 @@ OPERATORS = {
     # key: (Kambi operator code, display name)
     "unibet": ("ubbe", "Unibet BE"),
     "napoleon": ("ngbe", "Napoleon Sports"),
+    "711": ("sevelevbe", "711 Sports"),
 }
 
 DEFAULT_SPORTS = ["football", "tennis", "basketball", "ice_hockey"]

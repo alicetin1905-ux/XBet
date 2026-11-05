@@ -9,10 +9,8 @@ import urllib.request
 from dataclasses import dataclass, field
 from datetime import datetime
 
-USER_AGENT = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/130.0 Safari/537.36"
-)
+# An honest user agent: we read public feeds openly and never pretend to be a browser.
+USER_AGENT = "surebet-finder/0.1 (+https://github.com/alicetin1905-ux/XBet)"
 
 # Canonical market keys shared by all sources, so markets are only compared
 # when they really are the same bet:

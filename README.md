@@ -13,16 +13,23 @@ uit dezelfde odds-feed die hun website in je browser laadt.
 | Bookmaker | Platform | Status |
 |---|---|---|
 | Unibet (`unibet`) | Kambi | ✅ werkt |
+| 711 Sports (`711`) | Kambi | ✅ werkt |
 | Napoleon Sports (`napoleon`) | Kambi | ✅ ingebouwd, werkt alleen vanaf een Belgische verbinding |
 | Bwin.be (`bwin`) | Entain | ⏳ opname nodig (zie hieronder) |
 | Betcenter (`betcenter`) | EveryMatrix | ⏳ opname nodig |
 | Magic Betting (`magicbetting`) | Digitain | ⏳ opname nodig |
+| Starsport / Star Casino | Altenar | ❌ odds-API weigert verzoeken van buiten hun site |
+| VivatBet | eigen platform | ❌ alleen top-10 open, rest achter botcontrole |
+
+De bot leest alleen odds die open beschikbaar zijn, met een eerlijke user-agent. Hij omzeilt
+geen beveiliging (botcontroles, captcha's, nagebootste browsers); een site die dat vereist,
+valt af.
 
 **Draai dit op je eigen pc met een Belgische internetverbinding.** De meeste sites blokkeren
 bezoekers uit het buitenland en van servers.
 
 ```bash
-python -m surebet --books unibet,napoleon
+python -m surebet --books unibet,711,napoleon
 python -m surebet --books unibet,napoleon --leagues football/belgium/jupiler_pro_league --watch 120
 ```
 
@@ -30,9 +37,10 @@ Zonder `--leagues` kijkt de bot naar de wedstrijden van de komende ~24 uur in vo
 basketbal en ijshockey. De bot wacht standaard 1 seconde tussen verzoeken (`--delay`) om de
 sites niet te belasten. Hou het scaninterval redelijk (bv. `--watch 120`).
 
-Unibet en Napoleon krijgen hun odds allebei van Kambi en liggen daardoor vaak dicht bij elkaar.
-Surebets zitten vooral *tussen verschillende platforms*, dus de echte winst komt pas met
-Bwin, Betcenter en Magic Betting erbij.
+Unibet, 711 en Napoleon krijgen hun odds alle drie van Kambi en liggen daardoor dicht bij
+elkaar. Een test op 529 wedstrijden (november 2026) gaf 0 surebets; de beste combinatie had
+nog +1,7% marge. Surebets zitten vooral *tussen verschillende platforms*, dus de echte kans
+komt pas met Bwin, Betcenter en Magic Betting erbij.
 
 ### Een nieuwe bookmaker toevoegen: opname maken
 

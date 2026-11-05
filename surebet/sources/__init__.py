@@ -13,6 +13,11 @@ PLANNED = {
     "betcenter": "Betcenter (EveryMatrix)",
     "magicbetting": "Magic Betting (Digitain)",
 }
+# Checked but not possible without getting around their protection, which this bot doesn't do.
+BLOCKED = {
+    "starsport": "Starsport / Star Casino (Altenar): de odds-API weigert verzoeken van buiten hun site",
+    "vivatbet": "VivatBet: alleen de 10 topwedstrijden zijn open, de rest zit achter een botcontrole",
+}
 
 
 def build_sources(books: list[str], sports: list[str] | None = None, leagues: list[str] | None = None,
@@ -22,6 +27,8 @@ def build_sources(books: list[str], sports: list[str] | None = None, leagues: li
     for b in books:
         if b in KAMBI_OPERATORS:
             sources.append(KambiSource(b, sports=sports, leagues=leagues, client=client))
+        elif b in BLOCKED:
+            raise SourceError(f"{BLOCKED[b]}. Deze bookmaker wordt niet ondersteund.")
         elif b in PLANNED:
             raise SourceError(
                 f"{PLANNED[b]} wordt nog niet ondersteund. Gebruik tools/capture_site.py om het "
@@ -44,6 +51,6 @@ def fetch_all(sources) -> tuple[list[BookEvent], list[str]]:
 
 
 __all__ = [
-    "AVAILABLE", "PLANNED", "BookEvent", "KambiSource", "PoliteClient", "SourceError",
+    "AVAILABLE", "BLOCKED", "PLANNED", "BookEvent", "KambiSource", "PoliteClient", "SourceError",
     "build_sources", "fetch_all", "group_events", "to_odds_events",
 ]
